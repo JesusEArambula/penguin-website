@@ -1,3 +1,9 @@
+
+
+.main-title {
+  text-align: center;
+}
+
 card {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); /* Adds a shadow for depth */
   max-width: 300px; /* Sets a fixed width for the card */
@@ -19,3 +25,8 @@ card {
 img {
   border-radius: 5px 5px 0 0; /* Rounds the top corners of the image */
 }
+
+#penguin-name {
+  color: black;
+}
+
