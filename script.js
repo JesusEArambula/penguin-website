@@ -37,8 +37,8 @@ async function getAllRecords() {
             console.log(penguinImage);
 
             newHTML += `
-            <div class="col-xl-4 cardImageText">
-                <div class="card text-center list move border-dark mb-5 h-100" style="width: 20rem;">
+            <div class="col">
+                <div class="card shadow-sm">
                     <a href="index.html?id=${record.id}">
                         <p id="penguin-name">${penguinName}</p>
                         <img class="card-img-top rounded single" alt="${penguinName} Penguin" src="${penguinImage}">
