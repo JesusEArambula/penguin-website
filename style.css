@@ -12,10 +12,11 @@ body {
 h1 {
   font-size: 5vw;
   margin-top: .5em;
+  color: #395886;
 }
 
 a {
-text-decoration: none;
+  text-decoration: none;
 }
 
 .main-title {
@@ -43,9 +44,6 @@ text-decoration: none;
   padding: 2px 16px; /* Adds space around the text */
 }
 
-img {
-  border-radius: 5px 5px 0 0; /* Rounds the top corners of the image */
-}
 
 #penguin-name {
   font-size: 2.2vw;
@@ -61,3 +59,43 @@ span {
 ul {
   margin-right: 2vw;
 }
+
+.parent {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    gap: 1vw;
+}
+    
+.div1 {
+    grid-row: span 6 / span 6;
+}
+
+.penguin-image {
+  border-radius: 2em;
+}
+
+.div2 {
+  font-size: 3.5vw;
+  grid-column: 2 / 2;
+}
+
+.div3 {
+    font-size: 1.6vw;
+    margin-right:  2vw;
+    grid-row: span 4 / span 4;
+    grid-column-start: 2;
+}
+h5 {
+  font-size: 2.5vw;
+}
+h4 {
+  font-size: 2vw;
+}
+
+.div4 {
+    font-size: 2vw;
+    grid-column-start: 2;
+    grid-row-start: 6;
+}
+        

@@ -1,7 +1,7 @@
 
 
 async function getAllRecords() {
-    let getResultElement = document.getElementById("penguins");
+    let getResultElement = document.getElementById("all-penguins");
     const BASE_ID = 'app0pXASqtAQq5o5K';
     const TABLE_NAME = 'Penguins'; // URL encoded if it has special characters
     const API_TOKEN = 'patJZHYgn7HJuxd6J.73ee284f043f5f9dfa5fd0316e89526b37a8f296955d9beb3260655935ee49ac';
@@ -58,7 +58,7 @@ async function getAllRecords() {
 }
 
 async function getOneRecord(id) {
-    let getResultElement = document.getElementById("penguins");
+    let getResultElement = document.getElementById("one-penguin");
     const BASE_ID = 'app0pXASqtAQq5o5K';
     const TABLE_NAME = 'Penguins'; // URL encoded if it has special characters
     const API_TOKEN = 'patJZHYgn7HJuxd6J.73ee284f043f5f9dfa5fd0316e89526b37a8f296955d9beb3260655935ee49ac';
@@ -93,18 +93,29 @@ async function getOneRecord(id) {
         let penguinImage = data.fields['Image'][0].url;
 
         newHTML = `
-            <div class="card text-center">
-                <div class="card-header">
-                    ${penguinScience}
+            <div class="parent">
+                <div class="div1">
+                    <div>
+                        <img class="penguin-image" alt="${penguinName} Penguin" src="${penguinImage}" style="height: 50vw; width: 50vw; object-fit: scale-down;">
+                    </div>
                 </div>
-                <div class="card-body">
-                    <h5 class="card-title">${penguinName}</h5>
-                    <img class="card-img-top rounded img-fluid" alt="${penguinName} Penguin" src="${penguinImage}" style="height: 50%; width: 50%; object-fit: scale-down;">
-                    <hr>
-                    <p class="card-text">${penguinDescription}</p>
+                <div class="div2" penguin-name>
+                    <div>
+                        ${penguinName} Penguin
+                    </div>
                 </div>
-                <div class="card-footer text-muted">
-                    Height: ${penguinHeight}, Weight: ${penguinWeight}
+                <div class="div3 penguin-description"> 
+                    <div>
+                        <h5>Scientific Name:</h5>
+                        <h4>${penguinScience}</h4>
+                        <hr>
+                        <p>${penguinDescription}</p>
+                    </div>
+                </div>
+                <div class="div4 penguin-footer">
+                    <div>
+                        <p>Height: ${penguinHeight} | Weight: ${penguinWeight}</p>
+                    </div>
                 </div>
             </div>
         `
