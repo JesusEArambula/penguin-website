@@ -10,7 +10,7 @@ body {
 }
 
 h1 {
-  font-size: 3em;
+  font-size: 5vw;
   margin-top: .5em;
 }
 
@@ -48,9 +48,16 @@ img {
 }
 
 #penguin-name {
-  font-size: 2em;
-  margin-top: .05em;
+  font-size: 2.5vw;
+  margin-top: 1em;
   font-family: "Bungee";
   color: white;
 }
 
+span {
+  margin-left: 2vw;
+}
+
+ul {
+  margin-right: 2vw;
+}
