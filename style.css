@@ -1,10 +1,26 @@
+body {
+  color: #395886;
+  background-color: #B1C9Ef;
+  font-family: "Bungee";
+}
+.bungee-regular {
+  font-family: "Bungee", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
 
+
+a {
+text-decoration: none;
+}
 
 .main-title {
   text-align: center;
 }
 
-card {
+.card {
+  color: #d5deef;
+  background-color: #395886;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); /* Adds a shadow for depth */
   max-width: 300px; /* Sets a fixed width for the card */
   margin: auto; /* Centers the card horizontally */
@@ -12,6 +28,7 @@ card {
   font-family: sans-serif;
   border-radius: 5px; /* Rounds the corners */
   transition: 0.3s; /* Smooth transition for hover effect */
+  margin-bottom: 2em;
 }
 
 .card:hover {
@@ -27,6 +44,9 @@ img {
 }
 
 #penguin-name {
-  color: black;
+  font-size: 2em;
+  margin-top: .05em;
+  font-family: "Bungee";
+  color: white;
 }
 
