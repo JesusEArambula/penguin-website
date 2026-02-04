@@ -30,16 +30,16 @@ async function getAllRecords() {
         console.log(data.records.fields)
         
         data.records.forEach(function(record) {
+            let penguinID = record.id;
             let penguinName = record.fields['Name'];
             let penguinImage = record.fields['Image'][0].url;
-            console.log(record.id)
-            console.log(penguinName);
-            console.log(penguinImage);
+            
+            console.log(penguinID)
 
             newHTML += `
             <div class="col">
                 <div class="card shadow-sm">
-                    <a href="index.html?id=${record.id}">
+                    <a href="index.html?id=${penguinID}">
                         <p id="penguin-name">${penguinName}</p>
                         <img class="card-img-top rounded single" alt="${penguinName} Penguin" src="${penguinImage}">
                     </a>

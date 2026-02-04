@@ -9,6 +9,10 @@ body {
   font-style: normal;
 }
 
+h1 {
+  font-size: 3em;
+  margin-top: .5em;
+}
 
 a {
 text-decoration: none;
