@@ -1,5 +1,4 @@
-# penguin-website
-
+# Penguin Types Website
 Small website about penguins using AirTable API to display Penguin information. 🐧
 
 ## Usage
@@ -9,9 +8,9 @@ This is a small sample webpage of what beginning programming students can do to 
 ## Fetching All Records
 
 > [!NOTE]
-> Any "console.log" instances can be deleted. 🚫
-> They were included to help with debugging. 🪲 👍
-> You may copy the following code for your project. 😄
+> Any "console.log" instances can be deleted. 🚫  
+> They were included to help with debugging. 🪲 👍  
+> You may copy the following code for your project. 😄  
 
 ```javascript
 // Get all records
