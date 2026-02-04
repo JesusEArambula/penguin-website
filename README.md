@@ -76,9 +76,15 @@ async function getAllRecords()
         // Put the new HTML code to the index.html file
         getResultElement.innerHTML = newHTML;
         
-
+    // Will throw an error if fetching data fails
     } catch (error) {
         console.error('Error fetching data:', error);
     }
 }
+
+// Call on getAllRecords() function
+getAllRecords();
 ```
+
+>[!IMPORTANT]
+> Remember to call the ```javascript getAllRecords()``` function at the end of the file! :shipit:
