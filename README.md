@@ -98,6 +98,10 @@ let getResultElement = document.getElementById("view-all-records-div");
 let getResultElement = document.getElementById("view-one-record-div"); 
 ```
 Next, is to add the ```id``` variable inside the ```url``` variable.  
+```javascript
+    const url = `https://api.airtable.com/v0/${BASE_ID}/${TABLE_NAME}/${id}`;
+
+```
 After that, style the ```newHTML``` string however you like your HTML to look like for your "View on record" page.  
 ## Get Window URL
 To change between "view all records" and "get one record" pages, we have to check the web browser's URL link.  
@@ -106,3 +110,15 @@ To do this,  we need to include the following line of code at the end of the fil
 let idParams = window.location.search.split("?id=");
 ```
 This will store the current web browser URL as a string in the ```idParams``` variable.  
+
+## If statemet
+We will check if the current URL includes and ```id```.  
+If it does, we will call on the ```getOneRecord(id)``` function.   
+Otherwise,  we will call on the ```getAllRecords()``` function.
+```javascript
+if (idParams.length >= 2) {
+  getOneRecord(idParams[1]);
+} else {
+  getAllRecords();
+}
+```
