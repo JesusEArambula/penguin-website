@@ -17,7 +17,7 @@ This is a small sample webpage of what beginning programming students can do to 
 async function getAllRecords() 
 {
     // Replace "penguins" with you div class name
-    let getResultElement = document.getElementById("div-class-name");
+    let getResultElement = document.getElementById("view-all-records-div");
     // You can see yout Base ID in the URL address bar
     // Example: https://airtable.com/[table-ID]
     const BASE_ID = 'table-ID';
@@ -81,10 +81,28 @@ async function getAllRecords()
         console.error('Error fetching data:', error);
     }
 }
-
-// Call on getAllRecords() function
-getAllRecords();
 ```
 
->[!IMPORTANT]
-> Remember to call the ```javascript getAllRecords()``` function at the end of the file! :shipit:
+## Fetching One Record
+The function for fetching one record is the same as fetching all records.  
+You only have to do some slight tweaks... 🔧  
+First, we have to change the function name from ```getAllRecords()``` to ```getOneRecord()```  
+Then, we have to include an ```id``` variable inside the ```getOneRecord()``` function.  
+Next, we have to replace ```"view-all-records-div"``` inside the ```getElementByID();``` function.  
+Like so 👇  
+```javascript
+let getResultElement = document.getElementById("view-all-records-div");
+```
+⬇️  
+```javascript
+let getResultElement = document.getElementById("view-one-record-div"); 
+```
+Next, is to add the ```id``` variable inside the ```url``` variable.  
+After that, style the ```newHTML``` string however you like your HTML to look like for your "View on record" page.  
+## Get Window URL
+To change between "view all records" and "get one record" pages, we have to check the web browser's URL link.  
+To do this,  we need to include the following line of code at the end of the file:  
+```javascript
+let idParams = window.location.search.split("?id=");
+```
+This will store the current web browser URL as a string in the ```idParams``` variable.  
