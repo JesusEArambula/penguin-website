@@ -111,7 +111,7 @@ let idParams = window.location.search.split("?id=");
 ```
 This will store the current web browser URL as a string in the ```idParams``` variable.  
 
-## If statemet
+## If Statement
 We will check if the current URL includes and ```id```.  
 If it does, we will call on the ```getOneRecord(id)``` function.   
 Otherwise,  we will call on the ```getAllRecords()``` function.
