@@ -76,6 +76,7 @@ ul {
 }
 
 .div2 {
+  color: white;
   font-size: 3.5vw;
   grid-column: 2 / 2;
 }
@@ -90,12 +91,18 @@ h5 {
   font-size: 2.5vw;
 }
 h4 {
+  color: white;
   font-size: 2vw;
 }
 
 .div4 {
+  color:  white;
     font-size: 2vw;
     grid-column-start: 2;
     grid-row-start: 6;
+}
+
+.text-body-secondary {
+  color: white;
 }
         

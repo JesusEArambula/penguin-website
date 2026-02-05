@@ -110,6 +110,7 @@ async function getOneRecord(id) {
                         <h4>${penguinScience}</h4>
                         <hr>
                         <p>${penguinDescription}</p>
+                        <hr>
                     </div>
                 </div>
                 <div class="div4 penguin-footer">
