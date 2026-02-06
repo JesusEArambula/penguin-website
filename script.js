@@ -1,42 +1,41 @@
-
-
 async function getAllRecords() {
-    let getResultElement = document.getElementById("all-penguins");
-    const BASE_ID = 'app0pXASqtAQq5o5K';
-    const TABLE_NAME = 'Penguins'; // URL encoded if it has special characters
-    const API_TOKEN = 'patJZHYgn7HJuxd6J.73ee284f043f5f9dfa5fd0316e89526b37a8f296955d9beb3260655935ee49ac';
+  let getResultElement = document.getElementById("all-penguins");
+  const BASE_ID = "app0pXASqtAQq5o5K";
+  const TABLE_NAME = "Penguins"; // URL encoded if it has special characters
+  const API_TOKEN =
+    "patJZHYgn7HJuxd6J.73ee284f043f5f9dfa5fd0316e89526b37a8f296955d9beb3260655935ee49ac";
 
-    const url = `https://api.airtable.com/v0/${BASE_ID}/${TABLE_NAME}`;
+  const url = `https://api.airtable.com/v0/${BASE_ID}/${TABLE_NAME}`;
+  
+  try {
+    const response = await fetch(url, {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${API_TOKEN}`,
+        "Content-Type": "application/json",
+      },
+    });
 
-    try {
-        const response = await fetch(url, {
-            method: 'GET',
-            headers: {
-                'Authorization': `Bearer ${API_TOKEN}`,
-                'Content-Type': 'application/json'
-            }
-        });
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    // Play here ---------------------------------------------------------
+    getResultElement.innerHTML = "";
 
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        // Play here ---------------------------------------------------------
-        getResultElement.innerHTML = "";
+    let newHTML = "";
 
-        let newHTML = ""
+    const data = await response.json();
+    console.log(data.records); // An array of record objects
+    console.log(data.records.fields);
 
-        const data = await response.json();
-        console.log(data.records); // An array of record objects
-        console.log(data.records.fields)
-        
-        data.records.forEach(function(record) {
-            let penguinID = record.id;
-            let penguinName = record.fields['Name'];
-            let penguinImage = record.fields['Image'][0].url;
-            
-            console.log(penguinID)
+    data.records.forEach(function (record) {
+      let penguinID = record.id;
+      let penguinName = record.fields["Name"];
+      let penguinImage = record.fields["Image"][0].url;
 
-            newHTML += `
+      console.log(penguinID);
+
+      newHTML += `
             <div class="col">
                 <div class="card shadow-sm">
                     <a href="index.html?id=${penguinID}">
@@ -46,53 +45,53 @@ async function getAllRecords() {
                     <p hidden class="card-key">${penguinName}</p>
                 </div>
             </div>
-        `
-        });
+        `;
+    });
 
-        getResultElement.innerHTML = newHTML;
-        // Stop playing here ---------------------------------------------------------
-
-    } catch (error) {
-        console.error('Error fetching data:', error);
-    }
+    getResultElement.innerHTML = newHTML;
+    // Stop playing here ---------------------------------------------------------
+  } catch (error) {
+    console.error("Error fetching data:", error);
+  }
 }
 
 async function getOneRecord(id) {
-    let getResultElement = document.getElementById("one-penguin");
-    const BASE_ID = 'app0pXASqtAQq5o5K';
-    const TABLE_NAME = 'Penguins'; // URL encoded if it has special characters
-    const API_TOKEN = 'patJZHYgn7HJuxd6J.73ee284f043f5f9dfa5fd0316e89526b37a8f296955d9beb3260655935ee49ac';
+  let getResultElement = document.getElementById("one-penguin");
+  const BASE_ID = "app0pXASqtAQq5o5K";
+  const TABLE_NAME = "Penguins"; // URL encoded if it has special characters
+  const API_TOKEN =
+    "patJZHYgn7HJuxd6J.73ee284f043f5f9dfa5fd0316e89526b37a8f296955d9beb3260655935ee49ac";
 
-    const url = `https://api.airtable.com/v0/${BASE_ID}/${TABLE_NAME}/${id}`;
+  const url = `https://api.airtable.com/v0/${BASE_ID}/${TABLE_NAME}/${id}`;
 
-    try {
-        const response = await fetch(url, {
-            method: 'GET',
-            headers: {
-                'Authorization': `Bearer ${API_TOKEN}`,
-                'Content-Type': 'application/json'
-            }
-        });
+  try {
+    const response = await fetch(url, {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${API_TOKEN}`,
+        "Content-Type": "application/json",
+      },
+    });
 
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        // Play here ---------------------------------------------------------
-        getResultElement.innerHTML = "";
-        let newHTML = ""
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    // Play here ---------------------------------------------------------
+    getResultElement.innerHTML = "";
+    let newHTML = "";
 
-        const data = await response.json();
-        console.log(data); // Get single id fields data
-        console.log(data.fields);    
-        
-        let penguinName = data.fields['Name'];
-        let penguinScience = data.fields['Scientific Name'];
-        let penguinDescription = data.fields['Short Description'];
-        let penguinHeight = data.fields['Height'];
-        let penguinWeight = data.fields['Weight'];
-        let penguinImage = data.fields['Image'][0].url;
+    const data = await response.json();
+    console.log(data); // Get single id fields data
+    console.log(data.fields);
 
-        newHTML = `
+    let penguinName = data.fields["Name"];
+    let penguinScience = data.fields["Scientific Name"];
+    let penguinDescription = data.fields["Short Description"];
+    let penguinHeight = data.fields["Height"];
+    let penguinWeight = data.fields["Weight"];
+    let penguinImage = data.fields["Image"][0].url;
+
+    newHTML = `
             <div class="parent">
                 <div class="div1">
                     <div>
@@ -119,14 +118,13 @@ async function getOneRecord(id) {
                     </div>
                 </div>
             </div>
-        `
+        `;
 
-        getResultElement.innerHTML = newHTML;
-        // Stop playing here ---------------------------------------------------------
-
-    } catch (error) {
-        console.error('Error fetching data:', error);
-    }
+    getResultElement.innerHTML = newHTML;
+    // Stop playing here ---------------------------------------------------------
+  } catch (error) {
+    console.error("Error fetching data:", error);
+  }
 }
 
 // getAllRecords();
