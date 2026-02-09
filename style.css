@@ -1,6 +1,6 @@
 body {
   color: #395886;
-  background-color: #B1C9Ef;
+  background-color: #b1c9ef;
   font-family: "Bungee";
 }
 .bungee-regular {
@@ -11,7 +11,7 @@ body {
 
 h1 {
   font-size: 5vw;
-  margin-top: .5em;
+  margin-top: 0.5em;
   color: #395886;
 }
 
@@ -26,7 +26,7 @@ a {
 .card {
   color: #d5deef;
   background-color: #395886;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); /* Adds a shadow for depth */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* Adds a shadow for depth */
   max-width: 300px; /* Sets a fixed width for the card */
   margin: auto; /* Centers the card horizontally */
   text-align: center; /* Centers the text */
@@ -37,13 +37,12 @@ a {
 }
 
 .card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2); /* Enlarges shadow on hover */
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2); /* Enlarges shadow on hover */
 }
 
 .container {
   padding: 2px 16px; /* Adds space around the text */
 }
-
 
 #penguin-name {
   font-size: 2.2vw;
@@ -61,14 +60,14 @@ ul {
 }
 
 .parent {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(6, 1fr);
-    gap: 1vw;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  gap: 1vw;
 }
-    
+
 .div1 {
-    grid-row: span 6 / span 6;
+  grid-row: span 6 / span 6;
 }
 
 .penguin-image {
@@ -82,10 +81,10 @@ ul {
 }
 
 .div3 {
-    font-size: 1.6vw;
-    margin-right:  2vw;
-    grid-row: span 4 / span 4;
-    grid-column-start: 2;
+  font-size: 1.6vw;
+  margin-right: 2vw;
+  grid-row: span 4 / span 4;
+  grid-column-start: 2;
 }
 h5 {
   font-size: 2.5vw;
@@ -96,13 +95,12 @@ h4 {
 }
 
 .div4 {
-  color:  white;
-    font-size: 2vw;
-    grid-column-start: 2;
-    grid-row-start: 6;
+  color: white;
+  font-size: 2vw;
+  grid-column-start: 2;
+  grid-row-start: 6;
 }
 
 .text-body-secondary {
   color: white;
 }
-        

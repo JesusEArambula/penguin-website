@@ -6,7 +6,7 @@ async function getAllRecords() {
     "patJZHYgn7HJuxd6J.73ee284f043f5f9dfa5fd0316e89526b37a8f296955d9beb3260655935ee49ac";
 
   const url = `https://api.airtable.com/v0/${BASE_ID}/${TABLE_NAME}`;
-  
+
   try {
     const response = await fetch(url, {
       method: "GET",
